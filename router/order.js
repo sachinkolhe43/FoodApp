@@ -8,7 +8,7 @@ const router = express.Router();
 //admin - get all customers
 router.get("/", (request, response) => {
   const statement = `SELECT * FROM Customers`;
-  db.query(statement, (error, result) => {
+  db.connection.query(statement, (error, result) => {
     response.send(utils.createResult(error, result));
   });
 });
